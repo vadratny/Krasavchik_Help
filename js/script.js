@@ -4,7 +4,7 @@ async function send() {
     comment = document.getElementById("comment").value
     // 7796270109:AAEAKjkRxzeJ3gS7jsEX4wMlkAa3fOGBxnY
     url = "https://api.telegram.org/bot7796270109:AAEAKjkRxzeJ3gS7jsEX4wMlkAa3fOGBxnY/sendMessage"
-    text = "*USER*: _${fio}_\n\n*Lesson*: _${lesson}_\n\n*Comment*: _${comment}_"
+    text = "*USER*: "+fio+"\n\n*Lesson*: "+lesson+"\n\n*Comment*: "+comment
     const response = await fetch(url, {
         method: "POST",
         headers: { "Accept": "application/json", "Content-Type": "application/json" },
@@ -14,4 +14,5 @@ async function send() {
             'parse_mode':"MarkdownV2"
         })
     });
+
 }
